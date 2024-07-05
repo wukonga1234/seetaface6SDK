@@ -13,8 +13,6 @@ import java.util.Arrays;
 public class QualityOfIntegrityTest {
 
 
-    public static String CSTA_PATH = "D:\\face\\models";
-    public static String TEST_PICT = "D:\\face\\image\\me\\100.jpg";
 
     static {
         LoadNativeCore.LOAD_NATIVE(SeetaDevice.SEETA_DEVICE_AUTO);
@@ -28,7 +26,7 @@ public class QualityOfIntegrityTest {
 
             FaceLandmarker faceLandmarker = new FaceLandmarker(new SeetaModelSetting(FileConstant.face_landmarker_pts5, SeetaDevice.SEETA_DEVICE_AUTO));
 
-            SeetaImageData image = SeetafaceUtil.toSeetaImageData(TEST_PICT);
+            SeetaImageData image = SeetafaceUtil.toSeetaImageData(FileConstant.TEST_PICT);
             SeetaRect[] detects = detector.Detect(image);
 
             QualityOfIntegrity qualityOfIntegrity = new QualityOfIntegrity();

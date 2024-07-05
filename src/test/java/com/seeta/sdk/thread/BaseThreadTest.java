@@ -45,8 +45,8 @@ public class BaseThreadTest {
             faceLandmarker = new FaceLandmarker(new SeetaModelSetting(FileConstant.face_landmarker_pts5, SeetaDevice.SEETA_DEVICE_GPU));
             faceRecognizer = new FaceRecognizer(new SeetaModelSetting(FileConstant.face_recognizer, SeetaDevice.SEETA_DEVICE_GPU));
 
-            String fileName = "D:\\face\\image\\me\\00.jpg";
-            String fileName2 = "D:\\face\\image\\me\\11.jpg";
+            String fileName = FileConstant.TEST_PICT;
+            String fileName2 = "D:\\data\\train\\images\\face\\me\\01.png";
             SeetaImageData image1 = SeetafaceUtil.toSeetaImageData(fileName);
             SeetaRect[] detects1 = detector.Detect(image1);
             float[] features1 = new float[faceRecognizer.GetExtractFeatureSize()];

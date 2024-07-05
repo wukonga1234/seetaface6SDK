@@ -14,9 +14,6 @@ import java.util.Arrays;
 public class QualityOfClarityTest {
 
 
-    public static String CSTA_PATH = "D:\\face\\models";
-    public static String TEST_PICT = "D:\\face\\image\\me\\10.jpg";
-
     static {
         LoadNativeCore.LOAD_NATIVE(SeetaDevice.SEETA_DEVICE_AUTO);
     }
@@ -31,7 +28,7 @@ public class QualityOfClarityTest {
 
             QualityOfClarity qualityOfClarity = new QualityOfClarity();
 
-            SeetaImageData image = SeetafaceUtil.toSeetaImageData(TEST_PICT);
+            SeetaImageData image = SeetafaceUtil.toSeetaImageData(FileConstant.TEST_PICT);
             SeetaRect[] detects = detector.Detect(image);
             for (SeetaRect seetaRect : detects) {
                 //face_landmarker_pts5 根据这个来的

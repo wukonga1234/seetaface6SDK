@@ -4,10 +4,10 @@ public class FileConstant {
 
 
     // 模型文件目录
-    public static final String CSTA_PATH = "D:\\face\\models";
+    public static final String CSTA_PATH = "D:\\data\\train\\sf3.0_models";
 
     //测试照片
-    public static final String TEST_PICT = "D:\\face\\image\\me\\00.jpg";
+    public static final String TEST_PICT = "D:\\data\\train\\images\\face\\me\\00.jpg";
 
     //模型文件
     public static final String[] face_detector = {CSTA_PATH + "/face_detector.csta"};

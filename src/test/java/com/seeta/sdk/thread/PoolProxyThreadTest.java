@@ -74,9 +74,8 @@ public class PoolProxyThreadTest {
     private static void extract() {
  
         try {
-
-            String fileName = "D:\\face\\image\\me\\00.jpg";
-            String fileName2 = "D:\\face\\image\\me\\11.jpg";
+            String fileName = FileConstant.TEST_PICT;
+            String fileName2 = "D:\\data\\train\\images\\face\\me\\01.png";
             SeetaImageData image1 = SeetafaceUtil.toSeetaImageData(fileName);
             SeetaImageData image2 = SeetafaceUtil.toSeetaImageData(fileName2);
 

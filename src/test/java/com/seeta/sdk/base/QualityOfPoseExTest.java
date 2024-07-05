@@ -12,7 +12,6 @@ import java.util.*;
  */
 public class QualityOfPoseExTest {
 
-    public static String TEST_PICT = "D:\\face\\image\\me\\11.jpg";
 
     static {
         LoadNativeCore.LOAD_NATIVE(SeetaDevice.SEETA_DEVICE_AUTO);
@@ -26,7 +25,7 @@ public class QualityOfPoseExTest {
             FaceLandmarker faceLandmarker = new FaceLandmarker(new SeetaModelSetting(FileConstant.face_landmarker_pts68, SeetaDevice.SEETA_DEVICE_AUTO));
             QualityOfPoseEx qualityOfPoseEx = new QualityOfPoseEx(new SeetaModelSetting(FileConstant.pose_estimation, SeetaDevice.SEETA_DEVICE_AUTO));
 
-            SeetaImageData image = SeetafaceUtil.toSeetaImageData(TEST_PICT);
+            SeetaImageData image = SeetafaceUtil.toSeetaImageData(FileConstant.TEST_PICT);
             SeetaRect[] detects = detector.Detect(image);
 
             List<Map<String,Float>> list = new ArrayList<>();

@@ -6,13 +6,15 @@ import com.seeta.sdk.util.SeetafaceUtil;
 
 import java.util.Arrays;
 
+import static com.seeta.sdk.FileConstant.TEST_PICT;
+
+
 /**
  * 非深度的人脸亮度评估器
  */
 public class QualityOfBirghtnessTest {
 
 
-    public static String TEST_PICT = "D:\\face\\image\\me\\88.jpg";
 
     static {
         LoadNativeCore.LOAD_NATIVE(SeetaDevice.SEETA_DEVICE_AUTO);

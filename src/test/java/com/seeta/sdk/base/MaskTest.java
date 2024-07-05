@@ -5,12 +5,12 @@ import com.seeta.sdk.*;
 import com.seeta.sdk.util.LoadNativeCore;
 import com.seeta.sdk.util.SeetafaceUtil;
 
+import static com.seeta.sdk.FileConstant.TEST_PICT;
+
 //口罩检测
 public class MaskTest {
 
 
-    public static String CSTA_PATH = "D:\\face\\models";
-    public static String TEST_PICT = "D:\\face\\11.jpg";
 
     //加载dll
     static {

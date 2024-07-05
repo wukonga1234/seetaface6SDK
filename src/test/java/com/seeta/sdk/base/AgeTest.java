@@ -5,6 +5,7 @@ import com.seeta.sdk.*;
 import com.seeta.sdk.util.LoadNativeCore;
 import com.seeta.sdk.util.SeetafaceUtil;
 
+import java.io.File;
 import java.util.Arrays;
 
 /**
@@ -30,17 +31,29 @@ public class AgeTest {
             AgePredictor agePredictor = new AgePredictor(
                     new SeetaModelSetting(FileConstant.age_predictor, SeetaDevice.SEETA_DEVICE_AUTO));
             //图片数据
-            SeetaImageData image = SeetafaceUtil.toSeetaImageData(FileConstant.TEST_PICT);
-            SeetaRect[] detects = detector.Detect(image);
-            for (SeetaRect seetaRect : detects) {
-                //face_landmarker_pts5 根据这个来的
-                SeetaPointF[] pointFS = new SeetaPointF[5];
-                faceLandmarker.mark(image, seetaRect, pointFS);
-                //输出年龄
-                int[] ages = new int[1];
-                agePredictor.PredictAgeWithCrop(image, pointFS, ages);
-                System.out.println(Arrays.toString(ages));
+
+            String dirPath = "D:\\data\\train\\images\\face\\age";
+            File dir = new File(dirPath);
+            String[] imagesPath = dir.list();
+            if (imagesPath == null || imagesPath.length == 0) {
+                return;
             }
+            for (String path : imagesPath) {
+                SeetaImageData image = SeetafaceUtil.toSeetaImageData(dirPath + "\\" + path);
+                SeetaRect[] detects = detector.Detect(image);
+                for (SeetaRect seetaRect : detects) {
+                    //face_landmarker_pts5 根据这个来的
+                    SeetaPointF[] pointFS = new SeetaPointF[5];
+                    faceLandmarker.mark(image, seetaRect, pointFS);
+                    //输出年龄
+                    int[] ages = new int[1];
+                    long startMills = System.currentTimeMillis();
+                    agePredictor.PredictAgeWithCrop(image, pointFS, ages);
+                    System.out.println("耗时：" + (System.currentTimeMillis() - startMills) + "毫秒");
+                    System.out.println(Arrays.toString(ages));
+                }
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }

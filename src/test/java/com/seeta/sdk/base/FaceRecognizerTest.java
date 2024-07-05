@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 
 /**
- * 人脸向量特征测试
+ * 人脸向量特征测试&人脸比对
  */
 public class FaceRecognizerTest {
 
@@ -30,8 +30,8 @@ public class FaceRecognizerTest {
             System.out.println(faceRecognizer.GetExtractFeatureSize());
 
             //两张图片
-            String fileName = "D:\\face\\image\\me\\00.jpg";
-            String fileName2 = "D:\\face\\image\\me\\11.jpg";
+            String fileName = "D:\\data\\train\\images\\face\\me\\00.jpg";
+            String fileName2 = "D:\\data\\train\\images\\face\\age\\02.jpg";
             //第1张照片
             SeetaImageData image1 = SeetafaceUtil.toSeetaImageData(fileName);
             //第一张照片人脸识别
